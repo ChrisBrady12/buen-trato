@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nueva pagina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <div class="container">
+    <h1>EXPERIENCIA CON EL CLIENTE</h1>
+
+    <center><a href="https://forms.office.com/r/8A2aa2U4mE">INGRESA A LA ENCUESTA</a></center><br>
+
+    <div class="popup-video">
+        <span>&times;</span>
+        <video src="C:/Users/cmoreno/Desktop/EXPERICIENCIA CLIENTE/videos" muted autoplay controls></video>
+    </div>
+
+    <div class="video-container">
+        <div class="video"><video src="C:/Users/cmoreno/Desktop/EXPERICIENCIA CLIENTE/videos" muted></video></div>
+    
+        <div class="video"><video src="../videos/2.mp4" muted></video></div>
+
+     </div>    
+ </div> 
+ <script>
+    document.querySelectorAll('.video-container video').forEach(vid => {
+        vid.onclick = () =>{
+            document.querySelector('.popup-video').style.display = 'block';
+            document.querySelector('.popup-video video').src = vid.getAttribute('src');
+        }
+    });
+
+    document.querySelector('.popup-video span').onclick = () => {
+    document.querySelector('.popup-video').style.display = 'none';
+    }
+ </script>
+</body>
+</html>
