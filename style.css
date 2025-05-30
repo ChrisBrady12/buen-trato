@@ -7,9 +7,9 @@
 
 img {
       
-      height: 5vh; /* Para mantener la relación de aspecto de la imagen */
-      margin-top: 20px;
-      max-width: 100vh; /* Para que la imagen no se desborde del calce */
+      height: 5vh; 
+      margin-top: 15px;
+      max-width: 100vh; 
       
     }
 
