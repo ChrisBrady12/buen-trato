@@ -1,51 +1,102 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nueva pagina</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    <div class="container">
-      <center><img src="izzi.png" alt="logo izzi"></center><br>
-  <center><h1>EXPERIENCIA CON EL CLIENTE</h1></center><br>
-  <br>
- 
-  <center><a href="https://forms.office.com/r/8A2aa2U4mE">INGRESA A LA ENCUESTA</a></center><br>
-  <br>
-  
-  <div class="video-container">
-    <center><div class="video"><video src="2.mp4" muted></video></div></center><br><br>
-    <center><div class="video"><video src="1.mp4" muted></video></div></center>
-  </div>
- 
-  <div class="popup-video" style="display: none;">
-    <span>&times;</span>
-    <video muted controls></video>
-  </div>
-</div>
- 
-<script>
-  document.querySelectorAll('.video-container video').forEach(vid => {
-    vid.onclick = () => {
-      const popup = document.querySelector('.popup-video');
-      const popupVideo = popup.querySelector('video');
-popup.style.display = 'block';
-      popupVideo.src = vid.getAttribute('src');
-popupVideo.play(); // reproducir solo cuando haces clic
+img {
+      
+      height: 5vh; /* Para mantener la relación de aspecto de la imagen */
+      margin-top: 20px;
+      max-width: 100vh; /* Para que la imagen no se desborde del calce */
+      
     }
-  });
- 
-  document.querySelector('.popup-video span').onclick = () => {
-    const popup = document.querySelector('.popup-video');
-    const popupVideo = popup.querySelector('video');
-    popupVideo.pause();
-    popupVideo.currentTime = 0;
-popup.style.display = 'none';
-  }
-</script>
 
-</body>
-</html>
+.container{
+    position: relative;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.container h1{
+    color: aliceblue;
+    text-align: center;
+    padding: 15px;
+    font-size: 35px;
+}
+
+.container a{
+    color: aliceblue;
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+}
+
+.container .video-container{
+    display: list-item;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.container .video-container .video{
+    height: 200px;
+    width: 300px;
+    border: 2px solid #ffff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.7);
+    cursor:pointer;
+    overflow: hidden;
+}
+
+.container .video-container .video video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.container .video-container .video:hover video{
+    transform: scale(1.1);
+}
+
+.container .popup-video{
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100;
+    background: rgba(0,0,0,.8);
+    height: 100%;
+    width: 100%;
+}
+
+.container .popup-video video{ 
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 750px;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+.container .popup-video span{
+    position: absolute;
+    top: 5px; right: 20px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bolder;
+    z-index: 100;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .container .popup-video video{
+        width: 80%;
+    }
+}
+
+
+   
