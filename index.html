@@ -6,9 +6,7 @@
     <title>nueva pagina</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
- 
+<body> 
 
     <div class="container">
         <center><img src="izzi.png" alt="logo izzi"></center><br>
@@ -18,36 +16,5 @@
   <center><a href="https://forms.office.com/r/8A2aa2U4mE">INGRESA A LA ENCUESTA</a></center><br>
   <br>
   
-  <div class="video-container">
-    <center><div class="video"><video src="2.mp4" muted></video></div></center><br>
-    <center><div class="video"><video src="1.mp4" muted></video></div></center>
-  </div>
- 
-  <div class="popup-video" style="display: none;">
-    <span>&times;</span>
-    <video muted controls></video>
-  </div>
-</div>
- 
-<script>
-  document.querySelectorAll('.video-container video').forEach(vid => {
-    vid.onclick = () => {
-      const popup = document.querySelector('.popup-video');
-      const popupVideo = popup.querySelector('video');
-popup.style.display = 'block';
-      popupVideo.src = vid.getAttribute('src');
-popupVideo.play(); // reproducir solo cuando haces clic
-    }
-  });
- 
-  document.querySelector('.popup-video span').onclick = () => {
-    const popup = document.querySelector('.popup-video');
-    const popupVideo = popup.querySelector('video');
-    popupVideo.pause();
-    popupVideo.currentTime = 0;
-popup.style.display = 'none';
-  }
-</script>
-
 </body>
 </html>
