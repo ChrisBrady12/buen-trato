@@ -13,6 +13,14 @@ img {
       
     }
 
+img # img2{
+      
+      height: 100vh; 
+      margin-top: 15px;
+      max-width: 100vh; 
+      
+    }
+
 .container{
     position: relative;
     min-height: 100vh;
