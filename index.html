@@ -13,6 +13,37 @@
     <br> 
     <center><a href="https://forms.office.com/r/8A2aa2U4mE">PromoTok</a></center><br>
     <br>
+        <div class="video-container">
+      <center><img id="img2" src="atm.png" alt="logo izzi"></center><br><br>
+    <center><div class="video"><video src="ATM.mp4" muted></video></div></center><br>     
+    </div>
+ 
+  <div class="popup-video" style="display: none;">
+    <span>&times;</span>
+    <video muted controls></video>
+  </div>
+</div>
+ 
+<script>
+  document.querySelectorAll('.video-container video').forEach(vid => {
+    vid.onclick = () => {
+      const popup = document.querySelector('.popup-video');
+      const popupVideo = popup.querySelector('video');
+popup.style.display = 'block';
+      popupVideo.src = vid.getAttribute('src');
+popupVideo.play(); // reproducir solo cuando haces clic
+    }
+  });
+ 
+  document.querySelector('.popup-video span').onclick = () => {
+    const popup = document.querySelector('.popup-video');
+    const popupVideo = popup.querySelector('video');
+    popupVideo.pause();
+    popupVideo.currentTime = 0;
+popup.style.display = 'none';
+  }
+</script>
+    
     <center><img id="img2" src="img.png" alt="imagen"></center><br>
   
 </body>
