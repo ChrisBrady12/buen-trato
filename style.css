@@ -68,15 +68,15 @@
       cursor: pointer;
       transition: background 0.3s ease;
   }
-    play-button:hover {
+  .play-button:hover {
       background: rgba(0, 0, 0, 0.8);
   }
-    .play-button svg {
+  .play-button svg {
       fill: white;
       width: 32px;
       height: 32px;
   }
-    #video {
+  #video {
       display: none;
       width: 100%;
       border-radius: 12px;
